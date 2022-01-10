@@ -4,3 +4,5 @@ let result:any = <HTMLInputElement>document.getElementById("inputtext");
 let calculate = (number:any) => {
     result.value += number;
 };
+
+// equal operator
