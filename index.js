@@ -1,6 +1,5 @@
-let result:any = <HTMLInputElement>document.getElementById("inputtext");
-
+var result = document.getElementById("inputtext");
 //taking input and showing the numbers 1-10 and operators such as pi , e , mod etc
-let calculate = (number:any) => {
+var calculate = function (number) {
     result.value += number;
 };
