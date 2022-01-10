@@ -34,8 +34,7 @@ let Answer = () => {
   let numberAfter;
   let num;
   numberAfter = result.value;
-  num = numberBefore + '=' + numberAfter;
-  if(Number.isNaN(numberAfter))return; // checks nan if yes then returned else will considered as number
+  num = numberAfter;
 };
 
 //Clear value 
@@ -122,14 +121,14 @@ let cos = () => result.value = Math.cos(result.value);
 //tan function 
 let tan = () => result.value = Math.tan(result.value);
 
-//asinh function 
-let asinh = () => result.value = Math.asinh(result.value);
+//asin function 
+let asinh = () => result.value = Math.asin(result.value);
 
-//acosh function 
-let acosh = () => result.value = Math.acosh(result.value);
+//acos function 
+let acosh = () => result.value = Math.acos(result.value);
 
-//atanh function 
-let atanh = () => result.value = Math.atanh(result.value);
+//atan function 
+let atanh = () => result.value = Math.atan(result.value);
 
 /* fumctions : */
 //floor function 
@@ -142,7 +141,7 @@ let ceil = () => result.value = Math.ceil(result.value);
 let random = () => result.value = Math.random();
 
 //trunc function 
-let trunc = () => result.value = Math.trunc(result.value);
+//let trunc = () => result.value = Math.trunc(result.value);
 
 /* */
 //x^3 or xpow3() function 
@@ -152,7 +151,7 @@ let xpow3 = () => result.value = Math.pow(result.value,3);
 let powof2x = () => result.value = Math.pow(2, result.value);
 
 //cuberoot or cbrt() function 
-let cbrt = () => result.value = Math.cbrt(result.value);
+//let cbrt = () => result.value = Math.cbrt(result.value);
 
 /* */
 //delete function 
@@ -195,11 +194,11 @@ let fact = () => {
 let powx = () => result.value = Math.pow(10,result.value); 
 
 //function logarithm or log
-let log = () => result.value = Math.log10(result.value); 
+let log = () => result.value = Math.LOG10E; //
 
 /* */
 //function ln
-let ln = () => result.value = Math.log(result.value);
+let ln = () => result.value = Math.log;
 
 //function of +/-
 let pm = () => result.value = -result.value;
