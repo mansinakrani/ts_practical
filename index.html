@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="./calculator.css" />
+        <title>scientific calculator</title>
+    </head>
+
+    <body onkeypress="inputKey(event)">
+        <div class="cal">
+            
+            <table class="table table-bordered text-center box">
+                <tr>
+                    <td colspan="5" class="box ans">
+                        <small class="mx" id="sm"></small>
+                        <input type="text" id="inputtext" placeholder="0"/>
+                    </td>
+                </tr>
+                <!--buttons for performing operations-->
+                <tr>
+                    <td><button class="border-0 fw-bold bg-light" onclick="deg()">DEG</button></td>
+                    <td><button class="border-0 fw-bold bg-light" onclick="f_e()">F-E</button></td>
+                </tr>
+
+                <tr>
+                    <td><button class="border-0 bg-light text-muted" onclick="memoryclear()">MC</button></td>
+                    <td><button class="border-0 bg-light text-muted" onclick="memoryrecall()">MR</button></td>
+                    <td><button class="border-0 fw-bold bg-light" onclick="memoryplus()">M+</button></td>
+                    <td><button class="border-0 fw-bold bg-light" onclick="memoryminus()">M-</button></td>
+                    <td><button class="border-0 fw-bold bg-light" onclick="memorysave()">MS</button></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="dropdown">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown"><small> &#9727; Trigonometry</small></button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="sin()">sin</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="cos()">cos</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="tan()">tan</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="asinh()">asinh</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="acosh()">acosh</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="atanh()">atanh</a></li>
+                        </ul>
+                    </td>
+                    <td colspan="3">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown"><small>&#402;&nbsp; Functions</small></button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="floor()">floor</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="ceil()">ceil</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="random()">random</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="trunc()">trunc</a></li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="dropdown" >
+                        <button class="btn  dropdown-toggle" type="button"data-bs-toggle="dropdown" aria-expanded="false">2<sup>nd</sup></button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#" onclick="xpow3()">x<sup>3</sup></a></li>
+                          <li><a class="dropdown-item" href="#" onclick="powof2x()">2<sup>x</sup></a></li>
+                          <li><a class="dropdown-item" href="#" onclick="cbrt()">∛</a></li>
+                        </ul>
+                    </td>
+                    <td><button class="border-0 bg-light" onclick="calculate(3.14)">&pi;</button></td>
+                    <td><button class="border-0 bg-light" onclick="calculate(2.718)">&exponentiale;</button></td>
+                    <td><button class="border-0 bg-light" onclick="clr()">C</button></td>
+                    <td><button class="border-0 bg-light" onclick="del()">&#x232b;</button></td>
+                </tr>
+
+                <tr>
+                    <td><button class="border-0 bg-light" onclick="square()">x<sup>2</sup></button></td>
+                    <td><button class="border-0 bg-light" onclick="reciprocal()">1/x</button></td>
+                    <td><button class="border-0 bg-light" onclick="abs()">| x |</button></td>
+                    <td><button class="border-0 bg-light" onclick="exp()">exp</button> </td>
+                    <td><button class="border-0 bg-light" onclick="calculate('%')">mod</button></td>
+                </tr>
+
+                <tr>
+                    <td><button class="border-0 bg-light" onclick="sqrt()">&radic;x</button></td>
+                    <td><button class="border-0 bg-light" onclick="calculate('(')">(</button></td>
+                    <td><button class="border-0 bg-light" onclick="calculate(')')">)</button></td>
+                    <td><button class="border-0 bg-light" onclick="fact()">n!</button></td>
+                    <td><button class="border-0 bg-light" onclick="calculate('/')">&divide;</button></td>
+                </tr>
+
+                <tr>
+                    <td><button class="border-0 bg-light" onclick="calculate('^')">x<sup>y</sup></button></td>
+                    <td><button class="border-0 fw-bold bg-light" onclick="calculate(7)">7</button></td>
+                    <td><button class="border-0 fw-bold bg-light" onclick="calculate(8)">8</button></td>
+                    <td><button class="border-0 fw-bold bg-light" onclick="calculate(9)">9</button></td>
+                    <td><button class="border-0 bg-light"onclick="calculate('*')">&times;</button></td>
+                </tr>
+
+                <tr>
+                    <td><button class="border-0 bg-light" onclick="powx()">10<sup>x</sup></button></td>
+                    <td><button class="border-0 fw-bold bg-light" onclick="calculate(4)">4</button></td>
+                    <td><button class="border-0 fw-bold bg-light" onclick="calculate(5)">5</button></td>
+                    <td><button class="border-0 fw-bold bg-light" onclick="calculate(6)">6</button></td>
+                    <td><button class="border-0 bg-light" onclick="calculate('-')">&minus;</button></td>
+                </tr>
+
+                <tr>
+                    <td><button class="border-0 bg-light" onclick="log()">log</button></td>
+                    <td><button class="border-0 fw-bold bg-light" onclick="calculate(1)">1</button></td>
+                    <td><button class="border-0 fw-bold bg-light" onclick="calculate(2)">2</button></td>
+                    <td><button class="border-0 fw-bold bg-light" onclick="calculate(3)">3</button></td>
+                    <td><button class="border-0 bg-light" onclick="calculate('+')">&plus;</button></td>
+                </tr>
+
+                <tr>
+                    <td><button class="border-0 bg-light" onclick="ln()">ln</button></td>
+                    <td><button class="border-0 bg-light" onclick="pm()">&plus;/&minus;</button></td>
+                    <td><button class="border-0 fw-bold bg-light" onclick="calculate(0)">0</button></td>
+                    <td><button class="border-0 bg-light" onclick="calculate('.')">.</button></td>
+                    <td class="equal"><button class="border-0 bg-light" onclick="Answer()">&equals;</button></td>
+                </tr>
+
+            </table>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./index.ts"></script>
+</html>

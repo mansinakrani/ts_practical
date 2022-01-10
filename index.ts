@@ -5,4 +5,3 @@ let calculate = (number:any) => {
     result.value += number;
 };
 
-// equal operator

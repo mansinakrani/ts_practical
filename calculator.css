@@ -1,0 +1,64 @@
+.cal {
+    position: relative;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 72px;
+}
+
+table {
+    border-spacing: 1px;
+    border-collapse: collapse;
+    border: none;
+}
+
+table tr td input{
+    width: 290px;
+    border: none;
+    text-align: right;
+    float: right;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+table tr td{
+    border: hidden;
+}
+
+td:hover {
+    background: #d8d8d8 !important;
+    transition: 0.5s ease-in;
+}
+
+.mx {
+    display: block;
+    text-align: right;
+    margin: 8px 0px;
+}
+
+.bg-light {
+    background-color: transparent !important;
+}
+
+.dropdown-menu {
+    min-width: 50px;
+}
+
+.box {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.ans:hover {
+    background-color: transparent !important;
+}
+
+.equal {
+    background-color: rgb(86, 169, 235) !important;
+}
+
+.equal:hover {
+    background-color: rgb(117, 200, 238) !important;
+}
