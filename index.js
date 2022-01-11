@@ -6,41 +6,23 @@ var calculate = function (number) {
 // equal operator
 var Answer = function () {
     //condition checks the value contains ^ if yes then it will perform x^y
-    if (result.value.includes("^")) {
+    if (result.value.indexOf("^") !== -1) {
         var temp = result.value;
         var x = temp.split("^")[0];
         var y = temp.substring(temp.indexOf("^") + 1);
         result.value = Math.pow(x, y);
     }
-    var ans = result.value;
-    console.log("ans_ch", ans);
-    ans = String(ans);
-    var ans_new = ans.slice(-1);
-    console.log("ans_new", ans_new);
-    var numberBefore;
-    if (isNaN(ans_new)) {
-        ans = ans.substring(0, ans.length - 1);
-        numberBefore = ans;
-        console.log("numberBefore", numberBefore);
+    try {
+        result.value = eval(result.value);
     }
-    else {
-        numberBefore = result.value;
+    catch (err) {
+        alert("Enter the valid Input");
     }
-    numberBefore = document.getElementById("sm"); // displaying operations
-    numberBefore.innerHTML = result.value;
-    result.value = eval(numberBefore); // for calculating basic math operations
-    var numberAfter;
-    var num;
-    numberAfter = result.value;
-    num = numberAfter;
 };
 //Clear value 
-function clr() {
-    //result.value = "";
-    var cl = document.getElementById("sm");
-    cl.innerHTML = "";
+var clr = function () {
     result.value = "";
-}
+};
 //function radian to degree
 var deg = function () {
     var rad;
@@ -50,12 +32,12 @@ var deg = function () {
     result.value = degr;
 };
 //function for F-E -> ('F-E' stands for 'fixed to exponent') 
-function f_e() {
+var f_e = function () {
     return function () {
         result.value = Math.pow(10, result);
         return result.value;
     };
-}
+};
 var ms = [];
 var index = 0;
 // function memory save
@@ -81,9 +63,7 @@ var memoryplus = function () {
 var memoryminus = function () {
     var temp = "-" + result.value;
     ms.push(parseInt(temp));
-    result.value += temp;
-    //result.value = "";
-    //console.log(ms);
+    result.value = result.value + temp;
 };
 //function memory recall 
 var memoryrecall = function () {
@@ -123,16 +103,16 @@ var ceil = function () { return result.value = Math.ceil(result.value); };
 //random function 
 var random = function () { return result.value = Math.random(); };
 //trunc function 
-//let trunc = () => result.value = Math.trunc(result.value);
+//const trunc = () => result.value = Math.trunc(result.value);
 /* */
 //x^3 or xpow3() function 
 var xpow3 = function () { return result.value = Math.pow(result.value, 3); };
 //2^x or powof2x() function 
 var powof2x = function () { return result.value = Math.pow(2, result.value); };
 //cuberoot or cbrt() function 
-//let cbrt = () => result.value = Math.cbrt(result.value);
+//const cbrt = () => result.value = Math.cbrt(result.value);
 /* */
-//delete function 
+//deconste function 
 var del = function () { return result.value = result.value.slice(0, -1); };
 /* */
 //square function 
@@ -172,10 +152,7 @@ var pm = function () { return result.value = -result.value; };
 //function for taking input from keyboard (event:{ which: any; key: any; })
 var inputKey = function (event) {
     var unicode = event.which;
-    console.log("event", event);
-    console.log(unicode);
     if (unicode >= 48 && unicode <= 57 || unicode == 94 || unicode == 40 || unicode == 41 || unicode == 42 || unicode == 43 || unicode == 45 || unicode == 47) {
-        console.log("event1", event);
         calculate(event.key);
     }
     else {
