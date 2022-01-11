@@ -1,8 +1,8 @@
 let result:any = <HTMLInputElement>document.getElementById("inputtext");
 
-type num = string | number // Union type
+//type num = number | string // Union type
 //taking input and showing the numbers 1-10 and operators such as pi , e , mod etc
-const calculate = (number:num) => {
+const calculate = (number:number) => {
     result.value += number;
 };
 
@@ -62,7 +62,6 @@ const memoryplus = () => {
     let sum: number = ms.reduce(function (num1: number, num2: number) {
       return num1 + num2;
     }, 0);
-    console.log("total :" + sum);
     result.value = sum;
 }
 }
@@ -121,18 +120,12 @@ const ceil = () => result.value = Math.ceil(result.value);
 //random function 
 const random = () => result.value = Math.random();
 
-//trunc function 
-//const trunc = () => result.value = Math.trunc(result.value);
-
 /* */
 //x^3 or xpow3() function 
 const xpow3 = () => result.value = Math.pow(result.value,3);
 
 //2^x or powof2x() function 
 const powof2x = () => result.value = Math.pow(2, result.value);
-
-//cuberoot or cbrt() function 
-//const cbrt = () => result.value = Math.cbrt(result.value);
 
 /* */
 //deconste function 
@@ -190,12 +183,7 @@ let inputKey = (event: any) => {
   if (unicode>=48 && unicode <=57 || unicode==94 || unicode==40 || unicode==41  || unicode==42 || unicode==43  || unicode==45 || unicode==47  ){
   calculate(event.key);
   }
-  else{
-  }
-  if(unicode==13){
-      Answer();
-  }
-  if (unicode == 46 ) {
-      del();
-  } 
+  else{ }
+  if (unicode==13){ Answer();}
+  if (unicode == 46) { del();} 
 }

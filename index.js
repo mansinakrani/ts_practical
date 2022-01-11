@@ -1,4 +1,5 @@
 var result = document.getElementById("inputtext");
+//type num = number | string // Union type
 //taking input and showing the numbers 1-10 and operators such as pi , e , mod etc
 var calculate = function (number) {
     result.value += number;
@@ -55,7 +56,6 @@ var memoryplus = function () {
         var sum = ms.reduce(function (num1, num2) {
             return num1 + num2;
         }, 0);
-        console.log("total :" + sum);
         result.value = sum;
     }
 };
@@ -102,15 +102,11 @@ var floor = function () { return result.value = Math.floor(result.value); };
 var ceil = function () { return result.value = Math.ceil(result.value); };
 //random function 
 var random = function () { return result.value = Math.random(); };
-//trunc function 
-//const trunc = () => result.value = Math.trunc(result.value);
 /* */
 //x^3 or xpow3() function 
 var xpow3 = function () { return result.value = Math.pow(result.value, 3); };
 //2^x or powof2x() function 
 var powof2x = function () { return result.value = Math.pow(2, result.value); };
-//cuberoot or cbrt() function 
-//const cbrt = () => result.value = Math.cbrt(result.value);
 /* */
 //deconste function 
 var del = function () { return result.value = result.value.slice(0, -1); };
@@ -155,8 +151,7 @@ var inputKey = function (event) {
     if (unicode >= 48 && unicode <= 57 || unicode == 94 || unicode == 40 || unicode == 41 || unicode == 42 || unicode == 43 || unicode == 45 || unicode == 47) {
         calculate(event.key);
     }
-    else {
-    }
+    else { }
     if (unicode == 13) {
         Answer();
     }
