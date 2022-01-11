@@ -7,7 +7,7 @@ var calculate = function (number) {
 // equal operator
 var Answer = function () {
     //condition checks the value contains ^ if yes then it will perform x^y
-    if (result.value.indexOf("^") !== -1) {
+    if (result.value.includes("^") !== -1) {
         var temp = result.value;
         var x = temp.split("^")[0];
         var y = temp.substring(temp.indexOf("^") + 1);
@@ -61,9 +61,9 @@ var memoryplus = function () {
 };
 //function memory minus
 var memoryminus = function () {
-    var temp = "-" + result.value;
-    ms.push(parseInt(temp));
-    result.value = result.value + temp;
+    if (ms.length == 0) {
+        alert("Nothing is stored in memory");
+    }
 };
 //function memory recall 
 var memoryrecall = function () {
@@ -80,7 +80,6 @@ var memoryrecall = function () {
 var memoryclear = function () {
     ms.splice(0, ms.length);
     result.value = "";
-    console.log(ms);
 };
 /* Trigonometry functions : */
 //sin function 
@@ -108,7 +107,7 @@ var xpow3 = function () { return result.value = Math.pow(result.value, 3); };
 //2^x or powof2x() function 
 var powof2x = function () { return result.value = Math.pow(2, result.value); };
 /* */
-//deconste function 
+//delete function 
 var del = function () { return result.value = result.value.slice(0, -1); };
 /* */
 //square function 
@@ -142,7 +141,7 @@ var powx = function () { return result.value = Math.pow(10, result.value); };
 var log = function () { return result.value = Math.LOG10E; }; //
 /* */
 //function ln
-var ln = function () { return result.value = Math.log; };
+var ln = function () { return result.value = Math.log(result.value); };
 //function of +/-
 var pm = function () { return result.value = -result.value; };
 //function for taking input from keyboard (event:{ which: any; key: any; })
