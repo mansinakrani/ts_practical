@@ -30,6 +30,7 @@ let Answer = () => {
       }
 
   numberBefore=<HTMLInputElement>document.getElementById("sm"); // displaying operations
+  numberBefore.innerHTML = result.value;
   result.value = eval(numberBefore);// for calculating basic math operations
   let numberAfter;
   let num;
@@ -63,8 +64,8 @@ function f_e() {
 }
 
 
-const ms:any = [];
-var index = 0;
+const ms: Array<number> = [];
+var index:number = 0;
 // function memory save
 let memorysave = () =>{
   ms.push(parseInt(result.value));
@@ -77,10 +78,10 @@ let memoryplus = () => {
   if (ms.length == 0) {
     alert("Nothing is stored in memory");
   } else {
-    var sum = ms.reduce(function (a: any, b: any) {
-      return a + b;
+    let sum: number = ms.reduce(function (num1: number, num2: number) {
+      return num1 + num2;
     }, 0);
-    console.log("total " + sum);
+    console.log("total :" + sum);
     result.value = sum;
 }
 }
@@ -90,7 +91,8 @@ let memoryminus = () => {
     let temp = "-" + result.value;
     ms.push(parseInt(temp));
     result.value += temp;
-   
+    //result.value = "";
+    //console.log(ms);
 }
 
 //function memory recall 
@@ -99,7 +101,7 @@ let memoryrecall = () => {
         alert("Nothing is stored in memory");
       } else {
         index %= ms.length;
-        result.value = ms[index];
+        result.value = String(ms[index]);
         index++;
       }
 }

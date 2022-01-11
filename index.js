@@ -27,6 +27,7 @@ var Answer = function () {
         numberBefore = result.value;
     }
     numberBefore = document.getElementById("sm"); // displaying operations
+    numberBefore.innerHTML = result.value;
     result.value = eval(numberBefore); // for calculating basic math operations
     var numberAfter;
     var num;
@@ -69,10 +70,10 @@ var memoryplus = function () {
         alert("Nothing is stored in memory");
     }
     else {
-        var sum = ms.reduce(function (a, b) {
-            return a + b;
+        var sum = ms.reduce(function (num1, num2) {
+            return num1 + num2;
         }, 0);
-        console.log("total " + sum);
+        console.log("total :" + sum);
         result.value = sum;
     }
 };
@@ -81,6 +82,8 @@ var memoryminus = function () {
     var temp = "-" + result.value;
     ms.push(parseInt(temp));
     result.value += temp;
+    //result.value = "";
+    //console.log(ms);
 };
 //function memory recall 
 var memoryrecall = function () {
@@ -89,7 +92,7 @@ var memoryrecall = function () {
     }
     else {
         index %= ms.length;
-        result.value = ms[index];
+        result.value = String(ms[index]);
         index++;
     }
 };
