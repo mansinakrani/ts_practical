@@ -38,7 +38,7 @@ var deg = function () {
 };
 //function for F-E -> ('F-E' stands for 'fixed to exponent') 
 var f_e = function () {
-    result.value = String(Math.pow(10, stringtonum()));
+    result.value = (parseFloat(result.value)).toExponential();
     return result.value;
 };
 var ms = [];
