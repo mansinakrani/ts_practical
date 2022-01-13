@@ -43,7 +43,7 @@ let deg = () => {
 
 //function for F-E -> ('F-E' stands for 'fixed to exponent') 
 let f_e = () => {  
-    result.value = String(Math.pow(10,stringtonum()));
+    result.value = (parseFloat(result.value)).toExponential();
     return result.value;
 }
 
